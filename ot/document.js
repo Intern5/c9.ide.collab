@@ -334,7 +334,7 @@ define(function(require, module, exports) {
                 sendTimer = setTimeout(function () {
                     doSend();
                     sendTimer = null;
-                }, delay);
+                }, 0);
             }
 
             function addOutgoingEdit() {
@@ -586,7 +586,7 @@ define(function(require, module, exports) {
                 }
                 rejoinReason = undefined;
                 
-                cursorTimer = setTimeout(changedSelection, 500);
+                cursorTimer = setTimeout(changedSelection, 0);
                 cursorLayer && cursorLayer.dispose();
                 cursorLayer = new CursorLayer(session, workspace);
                 cursorLayer.updateSelections(doc.selections);
@@ -828,7 +828,7 @@ define(function(require, module, exports) {
                 if (!loaded || ignoreChanges || cursorTimer)
                     return;
                 // Don't send too many cursor change messages
-                cursorTimer = setTimeout(changedSelection, 200);
+                cursorTimer = setTimeout(changedSelection, 0);
             }
 
             // Add an author's edit revision to the local revision history
